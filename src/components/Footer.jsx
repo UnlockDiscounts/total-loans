@@ -1,3 +1,6 @@
+import { MdCall} from "react-icons/md";
+import { MdOutlineMail } from "react-icons/md";
+import { GoLocation } from "react-icons/go";
 function Footer() {
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -80,22 +83,22 @@ function Footer() {
             <h3 className="mb-3 text-sm font-semibold text-rose-500">
               Contact Info
             </h3>
-            <div className="mb-2 flex items-start gap-2">
-              <span className="mt-1 inline-flex h-4 w-4 shrink-0 rounded-full border border-rose-500" />
+            <div className="mb-2 flex items-center gap-2">
+              <GoLocation className="inline-flex h-4 w-4 shrink-0 " />
               <p>
                 HSR Layout, Bengaluru - 560102
                 <br />
                 Karnataka, India
               </p>
             </div>
-            <div className="mb-2 flex items-start gap-2">
-              <span className="mt-1 inline-flex h-4 w-4 shrink-0 rounded-full border border-rose-500" />
+            <div className="mb-2 flex items-center gap-2">
+              <MdCall className="inline-flex h-4 w-4 shrink-0 " />
               <a href="tel:+918045678901" className="hover:text-rose-500">
                 +91 80 4567 8901
               </a>
             </div>
-            <div className="mb-2 flex items-start gap-2">
-              <span className="mt-1 inline-flex h-4 w-4 shrink-0 rounded-full border border-rose-500" />
+            <div className="mb-2 flex items-center gap-2">
+              <MdOutlineMail className="inline-flex h-4 w-4 shrink-0 " />
               <a
                 href="mailto:info@totalloans.in"
                 className="hover:text-rose-500"
