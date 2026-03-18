@@ -2,8 +2,6 @@ import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 
 function App() {
- 
-
   return (
     <>
       <ContactSection />
@@ -12,4 +10,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
