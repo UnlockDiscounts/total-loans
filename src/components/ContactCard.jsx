@@ -21,7 +21,8 @@ function ContactCard() {
       >
         <img
           src={heroImg}
-          alt="Loan assistance"
+          alt=""
+          role="presentation"
           className="w-40 md:w-52 h-auto"
         />
       </div>
