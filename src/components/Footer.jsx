@@ -1,7 +1,7 @@
-import { MdCall} from "react-icons/md";
-import { MdOutlineMail } from "react-icons/md";
+import { MdCall, MdOutlineMail } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
 function Footer() {
+  function Footer() {
   const handleSubmit = (event) => {
     event.preventDefault()
   }
