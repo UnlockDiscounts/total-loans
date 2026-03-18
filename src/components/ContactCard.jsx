@@ -15,13 +15,11 @@ function ContactCard() {
           Call Us
         </button>
       </div>
-      <div
-        className="shrink-0 mt-4 md:mt-0 md:ml-6 flex justify-center"
-      >
+      <div className="shrink-0 mt-4 md:mt-0 md:ml-6 flex justify-center">
         <img
           src={heroImg}
           alt="Customer service representative ready to assist with your loan inquiry"
-          className="w-40 md:w-52 h-auto"
+          className="h-auto w-40 md:w-52"
         />
       </div>
     </div>
