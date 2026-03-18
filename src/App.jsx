@@ -1,12 +1,18 @@
-import React from 'react'
-import ServicesPage from './Components/ServicesPage'
 
-const App = () => {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Services from "./pages/Services.jsx";
+
+function App() {
   return (
-    <>
-      <ServicesPage/>
-    </>
-  )
-}
+    <Router>
+      
+      <Routes>
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/services" element={<Services />} />
+        {/* <Route path="/contact" element={<Contact />} /> */}
+      </Routes>
+    </Router>
+  );
 
-export default App
+}
+export default App;

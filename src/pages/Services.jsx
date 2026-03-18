@@ -1,6 +1,6 @@
-import FAQItem from "./FAQItem.jsx";
+import FAQItem from "../Components/FAQItem.jsx";
 
-import ServiceCard from "./ServiceCard.jsx";
+import ServiceCard from "../Components/ServiceCard.jsx";
 
 // import { image132, image133, image135} from "../assets/images";
 
@@ -24,7 +24,7 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 
 
-export default function ServicesPage() {
+export default function Services() {
   const services = [
     {
       title: "Home Loan",
