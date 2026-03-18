@@ -17,11 +17,10 @@ function ContactCard() {
       </div>
       <div
         className="shrink-0 mt-4 md:mt-0 md:ml-6 flex justify-center"
-        aria-hidden="true"
       >
         <img
           src={heroImg}
-          alt="Loan assistance"
+          alt="Customer service representative ready to assist with your loan inquiry"
           className="w-40 md:w-52 h-auto"
         />
       </div>

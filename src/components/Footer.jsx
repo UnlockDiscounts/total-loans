@@ -1,7 +1,6 @@
 import { MdCall, MdOutlineMail } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
 function Footer() {
-  function Footer() {
   const handleSubmit = (event) => {
     event.preventDefault()
   }
@@ -47,16 +46,16 @@ function Footer() {
             <h3 className="mb-3 text-sm font-semibold text-rose-500">
               Quick Links
             </h3>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/" className="block hover:text-rose-500">
               Home
             </a>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/services" className="block hover:text-rose-500">
               Services
             </a>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/about" className="block hover:text-rose-500">
               About Us
             </a>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/contact" className="block hover:text-rose-500">
               Contact Us
             </a>
           </div>
@@ -65,16 +64,16 @@ function Footer() {
             <h3 className="mb-3 text-sm font-semibold text-rose-500">
               Loan Services
             </h3>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/loans/personal" className="block hover:text-rose-500">
               Personal Loan
             </a>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/loans/home" className="block hover:text-rose-500">
               Home Loan
             </a>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/loans/business" className="block hover:text-rose-500">
               Business Loan
             </a>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/loans/vehicle" className="block hover:text-rose-500">
               Vehicle Loan
             </a>
           </div>
