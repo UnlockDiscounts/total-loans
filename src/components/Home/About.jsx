@@ -32,7 +32,7 @@ function About() {
           <div className="lg:absolute lg:mt-[337px] lg:ml-[56px] w-full max-w-[300px] lg:w-[300px] h-auto lg:h-[142px] bg-[#1E2A38] text-white rounded-[15px] shadow-2xl z-30 mt-8 lg:mt-0 relative overflow-hidden">
             {/* Quote Symbol */}
             <div className="lg:absolute lg:mt-8 lg:ml-[22px] text-white text-[72px] leading-7 font-normal">
-              “
+              "
             </div>
             {/* Quote Text */}
             <p className="lg:absolute lg:mt-[39px] lg:ml-[53px] text-lg lg:text-lg leading-6 font-medium max-w-[243px]">
@@ -44,10 +44,10 @@ function About() {
         {/* Right Side: Content Column */}
         <div className="lg:absolute lg:mt-0 lg:ml-[652px] lg:w-[662px] lg:min-h-[589px] flex flex-col gap-6 lg:gap-7 order-1 lg:order-2">
           <div>
-            <span className="block text-[#E60318] font-bold text-[26px] leading-none lg:w-[662px] lg:h-[36px]">
+            <span className="block text-[#E60318] font-bold text-[26px] leading-none whitespace-nowrap">
               ABOUT COMPANY
             </span>
-            <h2 className="text-[#1E2A38] text-[50px] font-extrabold leading-[64px] lg:w-[662px] lg:h-[128px] mt-2">
+            <h2 className="text-[#1E2A38] text-[50px] font-extrabold leading-[64px] mt-2">
               Funding Your Future with Confidence
             </h2>
           </div>
@@ -63,14 +63,14 @@ function About() {
           {/* Feature List */}
           <div className="flex flex-col gap-6 lg:w-[628px] lg:min-h-[201px] mt-4">
             <div className="flex items-start">
-              <div className="lg:w-[30px] lg:h-[31px] lg:mt-[2px] flex items-center justify-center flex-shrink-0">
+              <div className="w-[30px] h-[31px] mt-[2px] flex items-center justify-center flex-shrink-0">
                 <img src={shieldIcon} alt="Secure" className="w-full h-full" />
               </div>
-              <div className="lg:ml-[26px]">
-                <h4 className="text-[#1E2A38] text-[26px] font-bold leading-none lg:w-[164px] lg:h-[36px] text-center flex items-center justify-center">
+              <div className="w-full">
+                <h4 className="text-[#1E2A38] text-[26px] font-bold leading-none whitespace-nowrap">
                   100% Secure
                 </h4>
-                <p className="text-[#1E2A38] text-base font-normal leading-7 lg:w-[572px] lg:h-[56px] mt-0">
+                <p className="text-[#1E2A38] text-base font-normal leading-7 lg:w-[572px] mt-0">
                   Your financial information is protected with advanced security
                   measures to ensure complete safety and confidentiality
                 </p>
@@ -78,14 +78,14 @@ function About() {
             </div>
 
             <div className="flex items-start lg:mt-[17px]">
-              <div className="lg:w-[31.4px] lg:h-[31.4px] lg:mt-[2px] flex items-center justify-center flex-shrink-0">
+              <div className="w-[31.4px] h-[31.4px] mt-[2px] flex items-center justify-center flex-shrink-0">
                 <img src={clockIcon} alt="Fast" className="w-full h-full" />
               </div>
-              <div className="lg:ml-[24.6px]">
-                <h4 className="text-[#1E2A38] text-[26px] font-bold leading-none lg:w-[183px] lg:h-[36px] text-center flex items-center justify-center">
+              <div className="w-full">
+                <h4 className="text-[#1E2A38] text-[26px] font-bold leading-none whitespace-nowrap">
                   Fast & Reliable
                 </h4>
-                <p className="text-[#1E2A38] text-base font-normal leading-7 lg:w-[547px] lg:h-[56px] mt-0">
+                <p className="text-[#1E2A38] text-base font-normal leading-7 lg:w-[547px] mt-0">
                   Quick processing and dependable support to deliver smooth,
                   hassle-free loan services.
                 </p>

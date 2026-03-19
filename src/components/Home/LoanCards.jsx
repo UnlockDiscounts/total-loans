@@ -42,7 +42,7 @@ function LoanCards() {
   return (
     <section className="w-full lg:mt-[130px] lg:mb-[60px] lg:h-[490px] bg-white overflow-hidden">
       {/* Horizontal Scroll Container */}
-      <div className="flex gap-[25px] overflow-x-auto overflow-y-hidden scrollbar-hide snap-x snap-mandatory h-full items-center">
+      <div className="flex gap-[25px] overflow-x-auto no-scrollbar container overflow-y-hidden snap-x snap-mandatory h-full items-center">
         {/* Left Snap Spacer */}
         <div className="flex-shrink-0 lg:w-[55px] h-full snap-start" />
 

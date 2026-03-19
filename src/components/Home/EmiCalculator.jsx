@@ -39,7 +39,7 @@ const EmiCalculator = () => {
       <div className="lg:max-w-[1195px] lg:h-[867px] mx-auto flex flex-col">
         {/* Header */}
         <div className="flex justify-center">
-          <h2 className="text-[#1E2A38] text-[50px] font-extrabold leading-none lg:w-[357px] lg:h-[36px] flex items-center justify-center">
+          <h2 className="text-[#1E2A38] text-[50px] font-extrabold leading-none lg:w-[600px] lg:h-[36px] flex items-center justify-center">
             EMI Calculator
           </h2>
         </div>
