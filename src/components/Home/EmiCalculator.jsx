@@ -200,7 +200,7 @@ const EmiCalculator = () => {
 
             {/* Calculate EMI Button */}
             <button className="lg:absolute lg:top-0 lg:left-0 lg:mt-[583px] lg:ml-[64px] lg:w-[453px] lg:h-[60px] bg-[#E60318] text-white rounded-lg shadow-[0_4px_20px_0_rgba(0,0,0,0.1)] pt-[16px] pr-[41px] pb-[17px] pl-[43px] flex items-center justify-center gap-[10px] hover:bg-white hover:text-[#E60318] transition-all duration-300 focus:outline-none z-20">
-              <span className="lg:w-[130px] lg:h-[27px] flex items-center justify-center font-semibold text-[20px] leading-none text-center">
+              <span className="lg:w-[200px] lg:h-[27px] flex items-center justify-center font-semibold text-[20px] leading-none text-center">
                 Calculate EMI
               </span>
             </button>
@@ -209,7 +209,7 @@ const EmiCalculator = () => {
           {/* Right Side: Results */}
           <div className="lg:w-[601px] lg:h-full lg:absolute lg:top-0 lg:left-[603px]">
             {/* Results Label */}
-            <h3 className="lg:absolute lg:top-0 lg:left-0 lg:mt-[75px] lg:ml-[170px] lg:w-[270px] lg:h-[38px] flex items-center justify-center text-[#1E2A38] font-extrabold text-[28px] leading-none text-center z-20">
+            <h3 className="lg:absolute lg:top-0 lg:left-0 lg:mt-[75px] lg:ml-[170px] lg:w-[300px] lg:h-[38px] flex items-center justify-center text-[#1E2A38] font-extrabold text-[28px] leading-none text-center z-20">
               Your Monthly EMI is
             </h3>
 

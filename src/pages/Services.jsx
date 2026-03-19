@@ -1,6 +1,6 @@
-import FAQItem from "../components/FAQItem.jsx";
+import FAQItem from "../Components/FAQItem.jsx";
 
-import ServiceCard from "../components/ServiceCard.jsx";
+import ServiceCard from "../Components/ServiceCard.jsx";
 
 // import { image132, image133, image135} from "../assets/images";
 
@@ -113,7 +113,7 @@ export default function Services() {
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight"
+          className="text-5xl md:text-6xl font-semibold text-slate-900 mb-6 tracking-tight"
         >
           Our Services
         </motion.h1>
@@ -121,7 +121,7 @@ export default function Services() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-xl text-slate-600 leading-relaxed"
+          className="text-xl max-w-[content] text-slate-600 leading-relaxed"
         >
           Explore a wide range of loan solutions designed to support your
           personal, business, and financial goals.

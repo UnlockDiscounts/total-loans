@@ -1,4 +1,4 @@
-import heroImg from '../assets/image.png'
+import heroImg from "../assets/image.png";
 
 function ContactCard() {
   return (
@@ -7,9 +7,9 @@ function ContactCard() {
         <h3 className="mb-3 text-[26px] font-semibold leading-[34px] text-black md:text-[36px] md:leading-[48px] lg:text-[50px] lg:leading-[68px]">
           Prefer to Talk Directly?
         </h3>
-        <p className="mx-auto max-w-md text-sm text-slate-500 mb-5 md:text-base">
-          We will be available to answer your questions and provide
-          personalized assistance.
+        <p className="max-w-md text-sm text-slate-500 mb-5 md:text-base">
+          We will be available to answer your questions and provide personalized
+          assistance.
         </p>
         <button className="inline-flex items-center justify-center gap-[10px] rounded-[8px] bg-[#1E2A38] px-12 py-4 text-base font-medium text-white shadow-[0_4px_20px_rgba(0,0,0,0.25)] md:text-lg lg:text-[24px]">
           Call Us
@@ -27,7 +27,7 @@ function ContactCard() {
         />
       </div>
     </div>
-  )
+  );
 }
 
-export default ContactCard
+export default ContactCard;

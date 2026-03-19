@@ -66,7 +66,7 @@ function About() {
               <div className="w-[30px] h-[31px] mt-[2px] flex items-center justify-center flex-shrink-0">
                 <img src={shieldIcon} alt="Secure" className="w-full h-full" />
               </div>
-              <div className="w-full">
+              <div className="w-full ml-2 flex-col">
                 <h4 className="text-[#1E2A38] text-[26px] font-bold leading-none whitespace-nowrap">
                   100% Secure
                 </h4>
@@ -81,7 +81,7 @@ function About() {
               <div className="w-[31.4px] h-[31.4px] mt-[2px] flex items-center justify-center flex-shrink-0">
                 <img src={clockIcon} alt="Fast" className="w-full h-full" />
               </div>
-              <div className="w-full">
+              <div className="w-full ml-2 flex-col">
                 <h4 className="text-[#1E2A38] text-[26px] font-bold leading-none whitespace-nowrap">
                   Fast & Reliable
                 </h4>
