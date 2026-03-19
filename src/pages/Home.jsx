@@ -1,7 +1,7 @@
-import Hero from "../Components/Home/Hero";
-import About from "../Components/Home/About";
-import EmiCalculator from "../Components/Home/EmiCalculator";
-import LoanCards from "../Components/Home/LoanCards";
+import Hero from "../components/Home/Hero";
+import About from "../components/Home/About";
+import EmiCalculator from "../components/Home/EmiCalculator";
+import LoanCards from "../components/Home/LoanCards";
 
 function Home() {
   return (

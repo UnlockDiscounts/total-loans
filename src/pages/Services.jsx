@@ -1,8 +1,6 @@
-import FAQItem from "../Components/FAQItem.jsx";
+import FAQItem from "../components/FAQItem.jsx";
 
-import ServiceCard from "../Components/ServiceCard.jsx";
-
-// import { image132, image133, image135} from "../assets/images";
+import ServiceCard from "../components/ServiceCard.jsx";
 
 import image131 from "../assets/images/image131.svg";
 
