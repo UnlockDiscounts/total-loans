@@ -65,16 +65,16 @@ import { GoLocation } from "react-icons/go";
             <h3 className="mb-3 text-sm font-semibold text-rose-500">
               Loan Services
             </h3>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/contact?subject=Personal Loan" className="block hover:text-rose-500">
               Personal Loan
             </a>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/contact?subject=Home Loan" className="block hover:text-rose-500">
               Home Loan
             </a>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/contact?subject=Business Loan" className="block hover:text-rose-500">
               Business Loan
             </a>
-            <a href="#" className="block hover:text-rose-500">
+            <a href="/contact?subject=Vehicle Loan" className="block hover:text-rose-500">
               Vehicle Loan
             </a>
           </div>
@@ -86,15 +86,15 @@ import { GoLocation } from "react-icons/go";
             <div className="mb-2 flex items-center gap-2">
               <GoLocation className="inline-flex h-4 w-4 shrink-0 " />
               <p>
-                HSR Layout, Bengaluru - 560102
+                Kirloskar Layout, Near Chimney Hills,
                 <br />
-                Karnataka, India
+                Bangalore, Karnataka - 560057
               </p>
             </div>
             <div className="mb-2 flex items-center gap-2">
               <MdCall className="inline-flex h-4 w-4 shrink-0 " />
-              <a href="tel:+918045678901" className="hover:text-rose-500">
-                +91 80 4567 8901
+              <a href="tel:+919019742795" className="hover:text-rose-500">
+                +91 90197 42795
               </a>
             </div>
             <div className="mb-2 flex items-center gap-2">

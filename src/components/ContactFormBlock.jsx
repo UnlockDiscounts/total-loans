@@ -1,4 +1,18 @@
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+
 function ContactFormBlock() {
+  const [searchParams] = useSearchParams();
+  const [selectedSubject, setSelectedSubject] = useState("");
+
+  // Update selected subject if provided in URL
+  useEffect(() => {
+    const subjectParam = searchParams.get("subject");
+    if (subjectParam) {
+      setSelectedSubject(subjectParam);
+    }
+  }, [searchParams]);
+
   return (
     <div className="flex h-full flex-1 flex-col rounded-[16px] bg-[#FACDD1] shadow-[0_4px_10px_rgba(0,0,0,0.15)] p-6">
       <h3 className="text-center font-semibold text-slate-900 mb-4">
@@ -59,16 +73,17 @@ function ContactFormBlock() {
           </label>
           <select
             id="subject"
-            defaultValue=""
+            value={selectedSubject}
+            onChange={(e) => setSelectedSubject(e.target.value)}
             className="w-full rounded-md border border-rose-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-300"
           >
             <option value="" disabled>
               Select Subject
             </option>
-            <option>Personal Loan</option>
-            <option>Home Loan</option>
-            <option>Business Loan</option>
-            <option>Vehicle Loan</option>
+            <option value="Personal Loan">Personal Loan</option>
+            <option value="Home Loan">Home Loan</option>
+            <option value="Business Loan">Business Loan</option>
+            <option value="Vehicle Loan">Vehicle Loan</option>
           </select>
         </div>
         <div className="flex flex-col gap-1 text-left">

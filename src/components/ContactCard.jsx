@@ -11,9 +11,11 @@ function ContactCard() {
           We will be available to answer your questions and provide personalized
           assistance.
         </p>
-        <button className="inline-flex items-center justify-center gap-[10px] rounded-[8px] bg-[#1E2A38] px-12 py-4 text-base font-medium text-white shadow-[0_4px_20px_rgba(0,0,0,0.25)] md:text-lg lg:text-[24px]">
-          Call Us
-        </button>
+        <a href="tel:+919019742795">
+          <button className="inline-flex items-center justify-center gap-[10px] rounded-[8px] bg-[#1E2A38] px-12 py-4 text-base font-medium text-white shadow-[0_4px_20px_rgba(0,0,0,0.25)] md:text-lg lg:text-[24px]">
+            Call Us
+          </button>
+        </a>
       </div>
       <div
         className="shrink-0 mt-4 md:mt-0 md:ml-6 flex justify-center"
