@@ -147,9 +147,15 @@ export default function Services() {
       {/* <section className="bg-[#E6031833] py-24 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto pl-10"> */}
 
+<<<<<<< HEAD
       <section className="bg-[#E6031833] w-full py-10 md:py-24">
         <div className="mx-auto w-full max-w-[412px] px-4 md:max-w-7xl md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-y-16 md:gap-x-20">
+=======
+      <section className="w-full overflow-x-hidden bg-[#E6031833] py-16 md:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+>>>>>>> f222617d113200475b1e5d4285b50429cb61cc1e
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
