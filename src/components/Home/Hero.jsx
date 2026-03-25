@@ -1,38 +1,72 @@
 import heroImage from "../../assets/images/hero-image.png";
+import mobileHero from "../../assets/images/mobile-hero.png";
 
 function Hero() {
   return (
-    <section className="relative w-full h-[861px] overflow-hidden bg-white">
-      {/* Layer 1 */}
-      <div
-        className="absolute w-[1050px] h-[861px] top-[-80px] left-0 rounded-tr-[190px] rounded-br-[1500px] blur-[2px] z-20"
-        style={{
-          background:
-            "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(270deg, #E60318 14.9%, #1E2A38 100%)",
-        }}
-      />
+    <section className="relative overflow-hidden bg-white w-full">
+      {/* DESKTOP HERO */}
+      <div className="hidden lg:block w-full lg:min-h-[861px] relative">
+        <div className="absolute inset-0 max-w-screen-2xl mx-auto pointer-events-none">
+          {/* Background Layer 1 */}
+          <div
+            className="absolute left-0 top-[-80px] z-20 h-[861px] w-[1050px] rounded-tr-[190px] rounded-br-[1500px] blur-[2px]"
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(270deg, #E60318 14.9%, #1E2A38 100%)",
+            }}
+          />
 
-      {/* Layer 2 */}
-      <div className="absolute top-[10px] left-[490px] w-[1170px] h-[780px] rounded-bl-[500px] overflow-hidden z-10">
-        <img
-          src={heroImage}
-          alt="Loan Professional"
-          className="w-full h-full object-contain"
-        />
+          {/* Layer 2: Hero Image */}
+          <div className="absolute right-[-136px] top-[10px] z-10 h-[780px] w-[1170px] overflow-hidden rounded-bl-[500px]">
+            <img
+              src={heroImage}
+              alt="Loan Professional"
+              className="h-full w-full object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Layer 3: Content Overlay */}
+        <div className="relative z-30 w-full lg:max-w-[1302px] mx-auto px-6 pt-12 lg:px-8 lg:pt-28">
+          <div className="flex max-w-[703px] flex-col gap-6">
+            <h1 className="text-4xl font-extrabold tracking-normal text-[#EDF6F5] lg:text-[65px] lg:leading-[1.4]">
+              Looking for the Right Loan Solution?
+            </h1>
+            <p className="max-w-[703px] text-xl font-medium leading-[1.4] tracking-normal text-[#EDF6F5] lg:text-[32px]">
+              We Connect you with trusted banks to find the right loan easily.
+            </p>
+            <button className="mt-4 flex h-15 w-[194px] items-center justify-center whitespace-nowrap rounded-lg border-2 border-transparent bg-[#E60318] text-lg font-semibold leading-none text-white shadow-[0px_4px_20px_0px_#0000001A] transition-all duration-300 ease-out hover:border-white hover:bg-transparent lg:text-xl">
+              Get Started
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Layer 3: Content Overlay */}
-      <div className="relative z-30 pointer-events-none px-6 lg:px-12">
-        <div className="flex flex-col gap-[24px] max-w-[703px] mt-[110px] ml-[69px] pointer-events-auto">
-          <h1 className="text-[#EDF6F5] text-4xl lg:text-[65px] font-extrabold leading-tight lg:leading-[1.4] tracking-normal">
-            Looking for the Right Loan Solution?
-          </h1>
-          <p className="text-[#EDF6F5] text-[32px] font-medium leading-[1.4] tracking-normal">
-            We Connect you with trusted banks to find the right loan easily.
-          </p>
-          <button className="lg:w-[194px] lg:h-[60px] lg:pt-[16px] lg:pr-[41px] lg:pb-[17px] lg:pl-[43px] px-8 py-3 bg-[#E60318] text-white rounded-[8px] font-semibold text-lg lg:text-[20px] leading-none shadow-[0px_4px_20px_0px_#0000001A] border-2 border-transparent hover:bg-transparent hover:border-white transition-all duration-300 ease-out flex items-center justify-center pointer-events-auto whitespace-nowrap mt-4">
-            Get Started
-          </button>
+      {/* MOBILE HERO */}
+      <div className="block lg:hidden px-4 pt-6 pb-2">
+        <div className="relative w-full h-[409px] rounded-lg overflow-hidden shadow-lg">
+          {/* Background Image */}
+          <img
+            src={mobileHero}
+            alt="Hero"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/20"></div>
+
+          {/* Content Wrapper */}
+          <div className="absolute inset-0 flex flex-col justify-end p-4 pb-8">
+            <h1 className="text-white text-2xl font-[800] leading-[1.2] mb-[10px] tracking-tight">
+              Looking for the Right Loan Solutions?
+            </h1>
+            <p className="text-[#EDF6F5] text-sm font-[500] leading-tight mb-[18px]">
+              We Connect you with trusted banks to find the right loan easily.
+            </p>
+            <button className="bg-[#E60318] text-white text-[10px] font-[600] w-[83px] h-[24px] flex items-center justify-center rounded shadow-sm active:scale-95 transition-all duration-300 ease-out border-2 border-transparent hover:bg-white hover:text-[#E60318]">
+              Get Started
+            </button>
+          </div>
         </div>
       </div>
     </section>
