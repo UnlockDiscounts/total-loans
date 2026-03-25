@@ -1,44 +1,41 @@
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
-  const getLinkClass = ({ isActive }) =>
-    `text-[32px] font-medium leading-none cursor-pointer transition-all duration-300 ease-out ${
-      isActive ? "text-[#E60318]" : "text-[#1E2A38]"
-    }`;
-
   return (
-    <nav className="w-full h-20 bg-white rounded-b-[8px] shadow-[0px_4px_20px_0px_rgba(230,3,24,0.15)] flex items-center px-8 md:px-12 sticky top-0 z-50">
-      {/* Logo Section - Left Aligned */}
-      <div className="flex-1 flex items-center h-full">
-        <NavLink to="/">
-          <h1 className="text-[32px] font-extrabold leading-none tracking-normal">
-            <span className="text-[#000000]">Total</span>
-            <span className="text-[#E60318]">Loans</span>
-          </h1>
-        </NavLink>
+    <nav className="w-full sticky top-0 z-50 bg-white shadow-[0px_4px_20px_0px_rgba(230,3,24,0.1)] lg:shadow-[0px_4px_20px_0px_rgba(230,3,24,0.15)]">
+      <div className="max-w-[1700px] mx-auto w-full h-[clamp(39px,6vw,80px)] px-4 lg:px-20 flex items-center overflow-visible">
+        {/* Logo Section */}
+        <div className="flex-[1.5] lg:flex-1 flex justify-start items-center h-full">
+          <NavLink to="/">
+            <h1 className="text-[clamp(14.5px,3.8vw,32px)] font-extrabold leading-none tracking-normal">
+              <span className="text-[#1E2A38] lg:text-black">Total</span>
+              <span className="text-[#E60318]">Loans</span>
+            </h1>
+          </NavLink>
+        </div>
+
+        {/* Navigation Links */}
+        <div className="flex-none flex justify-center items-center h-full">
+          <ul className="flex items-center gap-[clamp(28px,4vw,100px)] h-full">
+            {["Home", "Services", "Contact"].map((label) => (
+              <li key={label}>
+                <NavLink
+                  to={label === "Home" ? "/" : `/${label.toLowerCase()}`}
+                  className={({ isActive }) => `
+                    text-[clamp(12px,1.4vw,22px)] font-extrabold leading-none tracking-tight transition-colors duration-300
+                    ${isActive ? "text-[#E60318]" : "text-[#1E2A38] lg:text-[#263238] hover:text-[#E60318]"}
+                  `}
+                >
+                  {label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Right Spacer */}
+        <div className="flex-1 h-full" />
       </div>
-
-      {/* Navigation Links - Center Aligned */}
-      <ul className="flex items-center gap-[100px] h-full">
-        <li>
-          <NavLink to="/" className={getLinkClass}>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/services" className={getLinkClass}>
-            Services
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/contact" className={getLinkClass}>
-            Contact
-          </NavLink>
-        </li>
-      </ul>
-
-      {/* Right Spacer - Empty div to keep links centered */}
-      <div className="flex-1" />
     </nav>
   );
 }

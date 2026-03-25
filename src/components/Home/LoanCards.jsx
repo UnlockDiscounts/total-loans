@@ -18,15 +18,15 @@ const loanTypes = [
 
 function LoanCard({ title, image }) {
   return (
-    <div className="flex-shrink-0 relative w-[85vw] sm:w-[320px] lg:w-[410px] h-[420px] sm:h-[460px] lg:h-[490px] rounded-[16px] overflow-hidden snap-start bg-[#DDDDDD] cursor-pointer">
+    <div className="flex-shrink-0 relative w-[85vw] sm:w-[320px] lg:max-w-[410px] lg:w-full h-[420px] sm:h-[460px] lg:h-[490px] rounded-2xl overflow-hidden snap-start bg-[#DDDDDD] cursor-pointer">
       {image && (
         <img src={image} alt={title} className="w-full h-full object-cover" />
       )}
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] lg:w-[379px] h-[65px] lg:h-[70px] rounded-[15px] border border-white flex items-center justify-center overflow-hidden z-20">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] lg:w-[379px] h-[65px] lg:h-17.5 rounded-2xl border border-white flex items-center justify-center overflow-hidden z-20">
         <div className="absolute inset-0 bg-[#E60318]/40"></div>
 
-        <span className="relative z-10 text-white font-bold text-[18px] sm:text-[20px] lg:text-[24px] uppercase tracking-wide text-center leading-none whitespace-nowrap">
+        <span className="relative z-10 text-white font-bold text-[18px] sm:text-[20px] lg:text-2xl uppercase tracking-wide text-center leading-none whitespace-nowrap">
           {title}
         </span>
       </div>
@@ -36,19 +36,53 @@ function LoanCard({ title, image }) {
 
 function LoanCards() {
   return (
-    <section className="w-full lg:mt-[130px] lg:mb-[60px] bg-white overflow-hidden flex justify-center">
-      {/* Center Wrapper */}
-      <div className="w-full max-w-[1500px]">
-        <div className="flex gap-[20px] lg:gap-[25px] overflow-x-auto overflow-y-hidden snap-x snap-mandatory items-center mx-18 lg:px-0 scrollbar-hide">
+    <section className="w-full lg:mt-32 lg:mb-15 bg-white overflow-hidden">
+      {/* DESKTOP LOAN CARDS */}
+      <div className="hidden lg:block">
+        <div className="w-full max-w-[1500px] mx-auto">
+          <div className="flex gap-[25px] overflow-x-auto overflow-y-hidden snap-x snap-mandatory items-center scrollbar-hide">
+            {/* Left Spacer */}
+            <div className="flex-shrink-0 w-[45px] h-full snap-start" />
+
+            {loanTypes.map((loan) => (
+              <LoanCard key={loan.id} title={loan.title} image={loan.image} />
+            ))}
+
+            {/* Right Spacer */}
+            <div className="flex-shrink-0 w-[45px] h-full" />
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE LOAN CARDS */}
+      <div className="block lg:hidden py-10 px-0">
+        <div className="flex gap-4 overflow-x-auto overflow-y-hidden snap-x snap-mandatory items-center no-scrollbar">
           {/* Left Spacer */}
-          {/* <div className="flex-shrink-0 w-[10px] lg:w-[55px] h-full snap-start" /> */}
+          <div className="flex-shrink-0 w-4 h-full snap-start" />
 
           {loanTypes.map((loan) => (
-            <LoanCard key={loan.id} title={loan.title} image={loan.image} />
+            <div
+              key={loan.id}
+              className="flex-shrink-0 relative w-41 h-56 rounded-2xl overflow-hidden snap-start bg-[#DDDDDD]"
+            >
+              <img
+                src={loan.image}
+                alt={loan.title}
+                className="w-full h-full object-cover"
+              />
+
+              {/* Mobile Badge */}
+              <div className="absolute bottom-[14px] left-1/2 -translate-x-1/2 w-30 h-7.5 rounded-lg border border-white flex items-center justify-center overflow-hidden z-20">
+                <div className="absolute inset-0 bg-[#E60318]/40 blur-[2px]"></div>
+                <span className="relative z-10 text-white font-bold text-[12px] uppercase tracking-wide text-center leading-none whitespace-nowrap">
+                  {loan.title}
+                </span>
+              </div>
+            </div>
           ))}
 
           {/* Right Spacer */}
-          {/* <div className="flex-shrink-0 w-[10px] lg:w-[55px] h-full" /> */}
+          <div className="flex-shrink-0 w-4 h-full" />
         </div>
       </div>
     </section>
