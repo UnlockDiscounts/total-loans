@@ -1,59 +1,60 @@
-import { 
-  ChevronRight, 
-  
-} from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-
-
+import { ChevronRight } from "lucide-react";
+import { motion } from "motion/react";
 
 const ServiceCard = ({ title, description, image, icon: Icon }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="relative h-full"
+      className="relative h-full w-full"
     >
-      {/* Red Border Offset Effect */}
-      <div className="absolute inset-0 border-2 border-rose-600 rounded-[2.5rem] translate-x-[-8px] translate-y-[8px]" />
-      
-      {/* Main White Card */}
-      <div className="relative bg-white rounded-[2.5rem] p-10 shadow-xl h-full flex flex-col z-10">
-        <div className="mb-6">
-          <h3 className="text-2xl font-bold text-slate-900 mb-2">{title}</h3>
-          <p className="text-slate-500 text-sm leading-relaxed max-w-[260px]">
+      {/* Red Border Offset */}
+      <div className="absolute inset-0 rounded-[2.5rem] border-2 border-rose-600 translate-x-[-6px] translate-y-[6px]" />
+
+      {/* Card */}
+      <div className="relative z-10 flex h-full flex-col rounded-[2.5rem] bg-white p-6 md:p-10 shadow-xl">
+
+        {/* Text */}
+        <div className="mb-4 md:mb-6">
+          <h3 className="mb-2 text-xl md:text-2xl font-bold text-slate-900">
+            {title}
+          </h3>
+          <p className="text-sm leading-relaxed text-slate-500 md:max-w-[260px]">
             {description}
           </p>
         </div>
-        
-        {/* Overlapping Image Container */}
-        <div className="relative mt-4 mb-10 -ml-16 mr-4">
-          <div className="rounded-2xl overflow-hidden shadow-xl h-40 w-full">
-            <img 
-              src={image} 
-              alt={title} 
-              className="w-full h-full object-cover"
+
+        {/* Image */}
+        <div className="relative mt-3 mb-8" style={{ marginLeft: "-12%" }}>
+          <div className="h-36 md:h-40 w-full overflow-hidden rounded-2xl shadow-xl">
+            <img
+              src={image}
+              alt={title}
+              className="h-full w-full object-cover"
               referrerPolicy="no-referrer"
             />
           </div>
-          
-          {/* Diamond Icon Badge */}
-          <div className="absolute -right-6 top-1/2 -translate-y-1/2">
-            <div className="bg-gray-200 p-4 shadow-2xl pl-4 rotate-45 border border-gray-50">
+
+          {/* Icon */}
+          <div className="absolute -right-5 md:-right-6 top-1/2 -translate-y-1/2">
+            <div className="rotate-45 border border-gray-50 bg-gray-200 p-3 md:p-4 shadow-2xl">
               <div className="-rotate-45 flex items-center justify-center">
-                <Icon className="w-7 h-7 text-rose-600" />
+                <Icon className="h-6 w-6 md:h-7 md:w-7 text-rose-600" />
               </div>
             </div>
           </div>
         </div>
-        
+
+        {/* CTA */}
         <div className="mt-auto">
-          <button className="flex items-center text-rose-600 font-bold hover:gap-2 transition-all group text-lg">
-            Contact Us <ChevronRight className="w-5 h-5 ml-1" />
+          <button className="flex items-center text-base md:text-lg font-bold text-rose-600 transition-all hover:gap-2">
+            Contact Us <ChevronRight className="ml-1 w-5 h-5" />
           </button>
         </div>
       </div>
     </motion.div>
   );
 };
+
 export default ServiceCard;
