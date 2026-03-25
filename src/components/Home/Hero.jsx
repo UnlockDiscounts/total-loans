@@ -135,7 +135,7 @@ Get Started
 <h1 className="
 absolute
 w-[396px]
-left-[calc(50%-198px+22px)]
+left-[5px]
 top-[318px]
 font-extrabold
 text-[24px]
@@ -150,7 +150,7 @@ Looking for the Right Loan Solutions?
 <p className="
 absolute
 w-[297px]
-left-[calc(50%-148px-28px)]
+left-[5px]
 top-[393px]
 font-medium
 text-[14px]
