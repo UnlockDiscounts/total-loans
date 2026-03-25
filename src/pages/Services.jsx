@@ -130,9 +130,9 @@ export default function Services() {
       {/* <section className="bg-[#E6031833] py-24 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto pl-10"> */}
 
-      <section className="bg-[#E6031833] py-24 w-full">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-16">
+      <section className="w-full overflow-x-hidden bg-[#E6031833] py-16 md:py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
