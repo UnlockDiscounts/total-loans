@@ -105,13 +105,13 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      {/* Hero Section */}
-      <header className="py-20 px-6 text-center max-w-4xl mx-auto">
+    <div className="min-h-screen bg-white text-slate-900 relative">
+      {/* Desktop: Reserve space for absolutely positioned heading/subheading */}
+      <div className="hidden md:block relative w-full h-[220px]"> {/* 220px covers both headings */}
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-6xl font-semibold text-slate-900 mb-6 tracking-tight"
+          className="absolute left-1/2 top-[112px] w-[124px] h-[14px] -translate-x-1/2 font-manrope font-bold text-[20px] leading-[27px] flex items-end justify-center text-center text-[#1E2A38] z-30"
         >
           Our Services
         </motion.h1>
@@ -119,10 +119,27 @@ export default function Services() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-xl max-w-[content] text-slate-600 leading-relaxed"
+          className="absolute left-1/2 top-[143px] w-[380px] h-[63px] -translate-x-1/2 font-manrope font-normal text-[18px] leading-[25px] flex items-end justify-center text-center text-[rgba(30,42,56,0.7)] z-30"
         >
-          Explore a wide range of loan solutions designed to support your
-          personal, business, and financial goals.
+          Explore a wide range of loan solutions designed to support your personal, business, and financial goals.
+        </motion.p>
+      </div>
+      {/* Mobile: Centered heading and subheading */}
+      <header className="block md:hidden mx-auto w-full max-w-[370px] py-12 px-4 text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-3xl font-semibold text-slate-900 mb-4 tracking-tight font-manrope"
+        >
+          Our Services
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-base text-slate-600 leading-relaxed font-manrope"
+        >
+          Explore a wide range of loan solutions designed to support your personal, business, and financial goals.
         </motion.p>
       </header>
 
@@ -130,9 +147,9 @@ export default function Services() {
       {/* <section className="bg-[#E6031833] py-24 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto pl-10"> */}
 
-      <section className="bg-[#E6031833] py-24 w-full">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-16">
+      <section className="bg-[#E6031833] w-full py-10 md:py-24">
+        <div className="mx-auto w-full max-w-[412px] px-4 md:max-w-7xl md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 md:gap-y-16 md:gap-x-20">
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
@@ -141,9 +158,9 @@ export default function Services() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 px-6 bg-[#FFF5F8]">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-6xl font-extrabold text-center text-[#1E293B] mb-20 tracking-tight">
+      <section className="bg-[#FFF5F8] py-10 md:py-24 px-4 md:px-6">
+        <div className="mx-auto w-full max-w-[370px] md:max-w-5xl">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-center text-[#1E293B] mb-10 md:mb-20 tracking-tight">
             Frequently Asked Questions
           </h2>
           <div className="flex flex-col items-center">

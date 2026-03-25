@@ -16,17 +16,22 @@ const loanTypes = [
   { id: 7, title: "Personal Loan", image: loanPersonal },
 ];
 
-function LoanCard({ title, image }) {
+function LoanCard({ title, image, index }) {
+  const mobileWidthClass =
+    index < 2 ? "w-[calc(100vw-2rem)]" : "w-[85vw]"
+
   return (
-    <div className="flex-shrink-0 relative w-[85vw] sm:w-[320px] lg:w-[410px] h-[420px] sm:h-[460px] lg:h-[490px] rounded-[16px] overflow-hidden snap-start bg-[#DDDDDD] cursor-pointer">
+    <div
+      className={`relative h-[240px] ${mobileWidthClass} flex-shrink-0 snap-start cursor-pointer overflow-hidden rounded-[16px] bg-[#DDDDDD] sm:h-[320px] sm:w-[320px] md:h-[420px] md:w-[320px] lg:h-[490px] lg:w-[410px]`}
+    >
       {image && (
         <img src={image} alt={title} className="w-full h-full object-cover" />
       )}
 
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] lg:w-[379px] h-[65px] lg:h-[70px] rounded-[15px] border border-white flex items-center justify-center overflow-hidden z-20">
+      <div className="absolute bottom-3 left-1/2 z-20 flex h-[52px] w-[90%] -translate-x-1/2 items-center justify-center overflow-hidden rounded-[15px] border border-white sm:bottom-4 sm:h-[60px] md:h-[65px] lg:w-[379px] lg:h-[70px]">
         <div className="absolute inset-0 bg-[#E60318]/40"></div>
 
-        <span className="relative z-10 text-white font-bold text-[18px] sm:text-[20px] lg:text-[24px] uppercase tracking-wide text-center leading-none whitespace-nowrap">
+        <span className="relative z-10 px-2 text-center text-[13px] font-bold uppercase leading-none tracking-wide text-white sm:text-[16px] md:text-[20px] lg:text-[24px]">
           {title}
         </span>
       </div>
@@ -36,19 +41,17 @@ function LoanCard({ title, image }) {
 
 function LoanCards() {
   return (
-    <section className="w-full lg:mt-[130px] lg:mb-[60px] bg-white overflow-hidden flex justify-center">
-      {/* Center Wrapper */}
+    <section className="flex w-full justify-center overflow-hidden bg-white py-8 md:py-12 lg:mb-[60px] lg:mt-[80px]">
       <div className="w-full max-w-[1500px]">
-        <div className="flex gap-[20px] lg:gap-[25px] overflow-x-auto overflow-y-hidden snap-x snap-mandatory items-center mx-18 lg:px-0 scrollbar-hide">
-          {/* Left Spacer */}
-          {/* <div className="flex-shrink-0 w-[10px] lg:w-[55px] h-full snap-start" /> */}
-
-          {loanTypes.map((loan) => (
-            <LoanCard key={loan.id} title={loan.title} image={loan.image} />
+        <div className="scrollbar-hide flex snap-x snap-mandatory items-center gap-3 overflow-x-auto overflow-y-hidden px-4 sm:gap-4 sm:px-6 md:gap-5 md:px-6 lg:gap-[25px] lg:px-0">
+          {loanTypes.map((loan, index) => (
+            <LoanCard
+              key={loan.id}
+              title={loan.title}
+              image={loan.image}
+              index={index}
+            />
           ))}
-
-          {/* Right Spacer */}
-          {/* <div className="flex-shrink-0 w-[10px] lg:w-[55px] h-full" /> */}
         </div>
       </div>
     </section>
