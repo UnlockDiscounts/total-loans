@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import heroImage from "../../assets/images/hero-image.png";
 import mobileHero from "../../assets/images/mobile-hero.png";
 
@@ -35,9 +37,12 @@ function Hero() {
             <p className="max-w-[703px] text-xl font-medium leading-[1.4] tracking-normal text-[#EDF6F5] lg:text-[32px]">
               We Connect you with trusted banks to find the right loan easily.
             </p>
-            <button className="mt-4 flex h-15 w-[194px] items-center justify-center whitespace-nowrap rounded-lg border-2 border-transparent bg-[#E60318] text-lg font-semibold leading-none text-white shadow-[0px_4px_20px_0px_#0000001A] transition-all duration-300 ease-out hover:border-white hover:bg-transparent lg:text-xl">
+            <Link
+              to="/contact"
+              className="mt-4 flex h-15 w-[194px] items-center justify-center whitespace-nowrap rounded-lg border-2 border-transparent bg-[#E60318] text-lg font-semibold leading-none text-white shadow-[0px_4px_20px_0px_#0000001A] transition-all duration-300 ease-out hover:border-white hover:bg-transparent lg:text-xl no-underline"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -63,9 +68,12 @@ function Hero() {
             <p className="text-[#EDF6F5] text-sm font-[500] leading-tight mb-[18px]">
               We Connect you with trusted banks to find the right loan easily.
             </p>
-            <button className="bg-[#E60318] text-white text-[10px] font-[600] w-[83px] h-[24px] flex items-center justify-center rounded shadow-sm active:scale-95 transition-all duration-300 ease-out border-2 border-transparent hover:bg-white hover:text-[#E60318]">
+            <Link
+              to="/contact"
+              className="bg-[#E60318] text-white text-[10px] font-[600] w-[83px] h-[24px] flex items-center justify-center rounded shadow-sm active:scale-95 transition-all duration-300 ease-out border-2 border-transparent hover:bg-white hover:text-[#E60318] no-underline"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       </div>

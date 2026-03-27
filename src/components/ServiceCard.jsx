@@ -1,5 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({ title, description, image, icon: Icon }) => {
   return (
@@ -14,7 +15,6 @@ const ServiceCard = ({ title, description, image, icon: Icon }) => {
 
       {/* Card */}
       <div className="relative z-10 flex h-full flex-col rounded-[2.5rem] bg-white p-6 md:p-10 shadow-xl">
-
         {/* Text */}
         <div className="mb-4 md:mb-6">
           <h3 className="mb-2 text-xl md:text-2xl font-bold text-slate-900">
@@ -48,9 +48,12 @@ const ServiceCard = ({ title, description, image, icon: Icon }) => {
 
         {/* CTA */}
         <div className="mt-auto">
-          <button className="flex items-center text-base md:text-lg font-bold text-rose-600 transition-all hover:gap-2">
+          <Link
+            to={`/contact?subject=${encodeURIComponent(title)}`}
+            className="flex items-center text-base md:text-lg font-bold text-rose-600 transition-all hover:gap-2"
+          >
             Contact Us <ChevronRight className="ml-1 w-5 h-5" />
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>

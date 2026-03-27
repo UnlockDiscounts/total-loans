@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
+
 import loanHome from "../../assets/images/loan-home.png";
 import loanVehicle from "../../assets/images/loan-vehicle.png";
-import loanGold from "../../assets/images/loan-gold.png";
 import loanAgriculture from "../../assets/images/loan-agriculture.png";
 import loanEducation from "../../assets/images/loan-education.png";
 import loanBusiness from "../../assets/images/loan-business.png";
@@ -9,7 +10,6 @@ import loanPersonal from "../../assets/images/loan-personal.png";
 const loanTypes = [
   { id: 1, title: "Home Loan", image: loanHome },
   { id: 2, title: "Vehicle Loan", image: loanVehicle },
-  { id: 3, title: "Gold Loan", image: loanGold },
   { id: 4, title: "Agriculture Loan", image: loanAgriculture },
   { id: 5, title: "Education Loan", image: loanEducation },
   { id: 6, title: "Business Loan", image: loanBusiness },
@@ -18,7 +18,10 @@ const loanTypes = [
 
 function LoanCard({ title, image }) {
   return (
-    <div className="flex-shrink-0 relative w-[85vw] sm:w-[320px] lg:max-w-[410px] lg:w-full h-[420px] sm:h-[460px] lg:h-[490px] rounded-2xl overflow-hidden snap-start bg-[#DDDDDD] cursor-pointer">
+    <Link
+      to={`/contact?subject=${encodeURIComponent(title)}`}
+      className="flex-shrink-0 relative w-[85vw] sm:w-[320px] lg:max-w-[410px] lg:w-full h-[420px] sm:h-[460px] lg:h-[490px] rounded-2xl overflow-hidden snap-start bg-[#DDDDDD] cursor-pointer"
+    >
       {image && (
         <img src={image} alt={title} className="w-full h-full object-cover" />
       )}
@@ -30,7 +33,7 @@ function LoanCard({ title, image }) {
           {title}
         </span>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -61,8 +64,9 @@ function LoanCards() {
           <div className="flex-shrink-0 w-4 h-full snap-start" />
 
           {loanTypes.map((loan) => (
-            <div
+            <Link
               key={loan.id}
+              to={`/contact?subject=${encodeURIComponent(loan.title)}`}
               className="flex-shrink-0 relative w-41 h-56 rounded-2xl overflow-hidden snap-start bg-[#DDDDDD]"
             >
               <img
@@ -78,7 +82,7 @@ function LoanCards() {
                   {loan.title}
                 </span>
               </div>
-            </div>
+            </Link>
           ))}
 
           {/* Right Spacer */}

@@ -80,35 +80,35 @@ function Footer() {
             <button
               type="button"
               onClick={() => navigate("/contact?subject=Personal Loan")}
-              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer mb-2"
             >
               Personal Loan
             </button>
             <button
               type="button"
               onClick={() => navigate("/contact?subject=Home Loan")}
-              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer mb-2"
             >
               Home Loan
             </button>
             <button
               type="button"
               onClick={() => navigate("/contact?subject=Business Loan")}
-              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer mb-2"
             >
               Business Loan
             </button>
             <button
               type="button"
               onClick={() => navigate("/contact?subject=Vehicle Loan")}
-              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer mb-2"
             >
               Vehicle Loan
             </button>
             <button
               type="button"
               onClick={() => navigate("/contact?subject=Agriculture Loan")}
-              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer mb-2"
             >
               Agriculture Loan
             </button>

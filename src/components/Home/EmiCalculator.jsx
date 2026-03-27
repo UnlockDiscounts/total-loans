@@ -5,6 +5,8 @@ const EmiCalculator = () => {
   const [amount, setAmount] = useState(500000);
   const [tenure, setTenure] = useState(5);
   const [rate, setRate] = useState(8.1);
+  const [focusedField, setFocusedField] = useState(null);
+  const [inputValue, setInputValue] = useState("");
 
   // 2. Calculation-Specific State
   const [resultAmount, setResultAmount] = useState(500000);
@@ -65,7 +67,7 @@ const EmiCalculator = () => {
                   state: amount,
                   setter: setAmount,
                   min: 100000,
-                  max: 5000000,
+                  max: 50000000,
                   step: 50000,
                 },
                 {
@@ -93,27 +95,63 @@ const EmiCalculator = () => {
                       {item.label}
                     </label>
                     <div className="w-[167px] h-[42px] rounded-lg bg-white flex items-center justify-center shadow-sm">
-                      <span className="text-[#686868] font-medium text-2xl leading-none px-4">
-                        {item.val}
-                      </span>
+                      <input
+                        type="text"
+                        value={
+                          focusedField === item.label ? inputValue : item.val
+                        }
+                        onFocus={() => {
+                          setFocusedField(item.label);
+                          setInputValue(String(item.state));
+                        }}
+                        onBlur={() => {
+                          setFocusedField(null);
+                          // Snap to step and clamp to range
+                          const num = Number(inputValue);
+                          const snapped =
+                            Math.round(num / item.step) * item.step;
+                          const clamped = Math.max(
+                            item.min,
+                            Math.min(item.max, snapped),
+                          );
+                          item.setter(Number(clamped.toFixed(2)));
+                        }}
+                        onChange={(e) => {
+                          const val = e.target.value.replace(/[^0-9.]/g, "");
+                          setInputValue(val);
+                          if (val !== "" && val !== ".") {
+                            item.setter(Number(val));
+                          }
+                        }}
+                        className="w-full bg-transparent text-[#686868] font-medium text-2xl leading-none text-center outline-none"
+                      />
                     </div>
                   </div>
                   <div className="relative w-full h-1.5 mt-2">
                     <div className="absolute inset-0 bg-[#7A7A7A] rounded-full"></div>
-                    <div
-                      className="absolute inset-y-0 left-0 bg-[#C20D1F] rounded-full"
-                      style={{
-                        width: `${((item.state - item.min) / (item.max - item.min)) * 100}%`,
-                      }}
-                    ></div>
-                    <div
-                      className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center w-4 h-4 bg-[#D9D9D9] rounded-full z-30"
-                      style={{
-                        left: `calc(${((item.state - item.min) / (item.max - item.min)) * 100}% - 8px)`,
-                      }}
-                    >
-                      <div className="w-2 h-2 bg-[#C20D1F] rounded-full"></div>
-                    </div>
+                    {/* Visual Clamping for Slider UI */}
+                    {(() => {
+                      const visualVal = Math.max(
+                        item.min,
+                        Math.min(item.max, item.state),
+                      );
+                      const percentage =
+                        ((visualVal - item.min) / (item.max - item.min)) * 100;
+                      return (
+                        <>
+                          <div
+                            className="absolute inset-y-0 left-0 bg-[#C20D1F] rounded-full transition-all duration-150"
+                            style={{ width: `${percentage}%` }}
+                          ></div>
+                          <div
+                            className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center w-4 h-4 bg-[#D9D9D9] rounded-full z-30 transition-all duration-150"
+                            style={{ left: `calc(${percentage}% - 8px)` }}
+                          >
+                            <div className="w-2 h-2 bg-[#C20D1F] rounded-full"></div>
+                          </div>
+                        </>
+                      );
+                    })()}
                     <input
                       type="range"
                       min={item.min}
@@ -201,7 +239,7 @@ const EmiCalculator = () => {
                         {item.label}
                       </span>
                     </div>
-                    <div className="text-[#1E2A38] font-extrabold text-lg mt-1 ml-8">
+                    <div className="text-[#1E2A38] font-extrabold text-lg mt-1 ml-8 whitespace-nowrap">
                       ₹ {item.val}
                     </div>
                   </div>
@@ -219,7 +257,7 @@ const EmiCalculator = () => {
                     <div className="text-[#263238] font-bold text-2xl leading-none">
                       {item.label}
                     </div>
-                    <div className="text-[#E60318] font-extrabold text-3xl mt-6">
+                    <div className="text-[#E60318] font-extrabold text-[28px] mt-6 whitespace-nowrap">
                       ₹ {item.val}
                     </div>
                   </div>
@@ -248,7 +286,7 @@ const EmiCalculator = () => {
                 state: amount,
                 setter: setAmount,
                 min: 100000,
-                max: 5000000,
+                max: 50000000,
                 step: 50000,
               },
               {
@@ -278,29 +316,65 @@ const EmiCalculator = () => {
                   <label className="text-white font-bold text-base leading-[1]">
                     {item.label}
                   </label>
-                  <div className="w-[111px] h-7.5 rounded-lg bg-white flex items-center justify-start px-4">
-                    <span className="text-[#686868] font-medium text-sm">
-                      {item.val}
-                    </span>
+                  <div className="w-[111px] h-7.5 rounded-lg bg-white flex items-center justify-start px-2">
+                    <input
+                      type="text"
+                      value={
+                        focusedField === `mobile-${item.label}`
+                          ? inputValue
+                          : item.val
+                      }
+                      onFocus={() => {
+                        setFocusedField(`mobile-${item.label}`);
+                        setInputValue(String(item.state));
+                      }}
+                      onBlur={() => {
+                        setFocusedField(null);
+                        const num = Number(inputValue);
+                        const snapped = Math.round(num / item.step) * item.step;
+                        const clamped = Math.max(
+                          item.min,
+                          Math.min(item.max, snapped),
+                        );
+                        item.setter(Number(clamped.toFixed(2)));
+                      }}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/[^0-9.]/g, "");
+                        setInputValue(val);
+                        if (val !== "" && val !== ".") {
+                          item.setter(Number(val));
+                        }
+                      }}
+                      className="w-full bg-transparent text-[#686868] font-medium text-sm outline-none text-center"
+                    />
                   </div>
                 </div>
                 {/* Mobile Slider */}
                 <div className="relative w-full h-[4px] mt-2">
                   <div className="absolute inset-0 bg-gray-300 rounded-full"></div>
-                  <div
-                    className="absolute inset-y-0 left-0 bg-[#C20D1F] rounded-full"
-                    style={{
-                      width: `${((item.state - item.min) / (item.max - item.min)) * 100}%`,
-                    }}
-                  ></div>
-                  <div
-                    className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center w-[12px] h-[12px] bg-white border-2 border-[#C20D1F] rounded-full z-30"
-                    style={{
-                      left: `calc(${((item.state - item.min) / (item.max - item.min)) * 100}% - 6px)`,
-                    }}
-                  >
-                    <div className="w-[4px] h-[4px] bg-[#C20D1F] rounded-full"></div>
-                  </div>
+                  {/* Visual Clamping for Mobile UI */}
+                  {(() => {
+                    const visualVal = Math.max(
+                      item.min,
+                      Math.min(item.max, item.state),
+                    );
+                    const percentage =
+                      ((visualVal - item.min) / (item.max - item.min)) * 100;
+                    return (
+                      <>
+                        <div
+                          className="absolute inset-y-0 left-0 bg-[#C20D1F] rounded-full transition-all duration-150"
+                          style={{ width: `${percentage}%` }}
+                        ></div>
+                        <div
+                          className="absolute top-1/2 -translate-y-1/2 flex items-center justify-center w-[12px] h-[12px] bg-white border-2 border-[#C20D1F] rounded-full z-30 transition-all duration-150"
+                          style={{ left: `calc(${percentage}% - 6px)` }}
+                        >
+                          <div className="w-[4px] h-[4px] bg-[#C20D1F] rounded-full"></div>
+                        </div>
+                      </>
+                    );
+                  })()}
                   <input
                     type="range"
                     min={item.min}
@@ -403,7 +477,7 @@ const EmiCalculator = () => {
                     <div className="text-[#263238] font-bold text-base leading-tight text-center">
                       {item.label}
                     </div>
-                    <div className="text-white font-[800] text-xl mt-1">
+                    <div className="text-white font-[800] text-lg mt-1 whitespace-nowrap">
                       ₹ {item.val}
                     </div>
                   </div>
