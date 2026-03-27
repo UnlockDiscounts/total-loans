@@ -4,11 +4,13 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
-      <div className="flex min-h-screen flex-col bg-white">
+      <ScrollToTop />
+      <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-1">
           <Routes>
