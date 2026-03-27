@@ -1,10 +1,13 @@
 import { MdCall, MdOutlineMail } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
+import { useNavigate } from "react-router-dom";
 
-  function Footer() {
+
+function Footer() {
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
-    event.preventDefault()
-  }
+    event.preventDefault();
+  };
 
   return (
     <footer className="border-t border-slate-200 bg-white px-4 md:px-6 pt-10 pb-6 text-sm text-slate-500">
@@ -47,36 +50,75 @@ import { GoLocation } from "react-icons/go";
             <h3 className="mb-3 text-sm font-semibold text-rose-500">
               Quick Links
             </h3>
-            <a href="#" className="block hover:text-rose-500">
+            <button
+              type="button"
+              onClick={() => navigate("/")}
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer mb-2"
+            >
               Home
-            </a>
-            <a href="#" className="block hover:text-rose-500">
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate("/services")}
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer mb-2"
+            >
               Services
-            </a>
-            <a href="#" className="block hover:text-rose-500">
-              About Us
-            </a>
-            <a href="#" className="block hover:text-rose-500">
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate("/contact")}
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+            >
               Contact Us
-            </a>
+            </button>
           </div>
 
           <div className="space-y-2 text-xs text-slate-800">
             <h3 className="mb-3 text-sm font-semibold text-rose-500">
               Loan Services
             </h3>
-            <a href="/contact?subject=Personal Loan" className="block hover:text-rose-500">
+            <button
+              type="button"
+              onClick={() => navigate("/contact?subject=Personal Loan")}
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+            >
               Personal Loan
-            </a>
-            <a href="/contact?subject=Home Loan" className="block hover:text-rose-500">
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate("/contact?subject=Home Loan")}
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+            >
               Home Loan
-            </a>
-            <a href="/contact?subject=Business Loan" className="block hover:text-rose-500">
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate("/contact?subject=Business Loan")}
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+            >
               Business Loan
-            </a>
-            <a href="/contact?subject=Vehicle Loan" className="block hover:text-rose-500">
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate("/contact?subject=Vehicle Loan")}
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+            >
               Vehicle Loan
-            </a>
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate("/contact?subject=Agriculture Loan")}
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+            >
+              Agriculture Loan
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate("/contact?subject=Education Loan")}
+              className="block hover:text-rose-500 bg-transparent border-none p-0 m-0 text-left cursor-pointer"
+            >
+              Education Loan
+            </button>
           </div>
 
           <div className="space-y-2 text-xs text-slate-800">
